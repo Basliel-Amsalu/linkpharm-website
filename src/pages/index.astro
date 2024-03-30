@@ -27,12 +27,16 @@ import {
         document.getElementById("navbar").classList.add("text-gray-900");
         document.getElementById("navbar").classList.add("bg-white");
         document.getElementById("navbar").classList.add("shadow");
+        document.getElementById("navbar").classList.add("absolute");
+        document.getElementById("navbar").classList.add("top-0");
       } else {
         document.getElementById("navbar").classList.remove("bg-white");
         document.getElementById("navbar").classList.remove("shadow");
-		document.getElementById("navbar").classList.remove("text-gray-900");
+        document.getElementById("navbar").classList.remove("text-gray-900");
         document.getElementById("navbar").classList.add("text-gray-300");
         document.getElementById("navbar").classList.add("bg-transparent");
+        document.getElementById("navbar").classList.remove("absolute");
+        document.getElementById("navbar").classList.remove("top-0");
       }
     }
   </script>
@@ -40,7 +44,10 @@ import {
     class="bg-[url('/asset/image/grad.avif')] w-screen h-screen bg-cover bg-center"
   >
     <div class='bg-black bg-opacity-25 w-[100%] h-[100%]'>
-      <nav class='bg-transparent sticky top-0 z-30 text-gray-300' id='navbar'>
+      <nav
+        class='bg-transparent sticky top-0 z-30 transition-all duration-300 ease-in-out text-gray-300'
+        id='navbar'
+      >
         <div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
           <div class='relative flex h-16 items-center justify-between'>
             <div class='flex flex-shrink-0 items-center'>
@@ -120,17 +127,17 @@ import {
                 Ethiopia's B2B marketplace for pharmaceutical and cosmetic
                 products.
               </p>
-              
+
               <div class='mt-10'>
                 <button
-                  class='border bg-stone-300 px-6 py-2 text-center mr-5 hover:bg-slate-800 hover:text-slate-200'
+                  class='border bg-stone-300 px-6 py-2 text-center mr-5 hover:bg-slate-800 hover:text-slate-200 transition-all duration-300 ease-in-out'
                 >
                   <a class='' href='#your-link'
                     ><i class='fa-brands fa-apple'></i>{"  "}Download</a
                   >
                 </button>
                 <button
-                  class='border px-6 py-2 text-center mr-5 hover:bg-slate-800 hover:text-slate-200'
+                  class='border px-6 py-2 text-center mr-5 hover:bg-slate-800 hover:text-slate-200 transition-all duration-300 ease-in-out'
                 >
                   <a
                     class=''
@@ -155,23 +162,27 @@ import {
   </div>
   <Card className='flex flex-row p-14'>
     <CardHeader className='w-[50%]'>
-      <img class="object-cover h-[100%] w-[100%]" src='/asset/image/about.svg' alt='about' />
+      <img
+        class='object-cover h-[100%] w-[100%]'
+        src='/asset/image/about.svg'
+        alt='about'
+      />
     </CardHeader>
     <CardContent className='w-[50%]'>
       <div class='about_content mx-4 pt-11 lg:pt-15 lg:pb-15'>
-        <div class='section_title pb-9'>
-          <h5 class='font-semibold text-lg text-red-500'>About Us</h5>
-          <h4 class='font-bold text-xl'>Know Details About Our Company</h4>
+        <div class='pb-6'>
+          <h5 class='font-semibold text-2xl mb-4 text-red-500'>About Us</h5>
+          <h4 class='font-bold text-4xl'>Know Details About Our Company</h4>
         </div>
         <!-- section title -->
-        <p>
+        <p class='mb-2 text-gray-500 dark:text-gray-400'>
           LinkPharm is a technology company that specializes in digital ordering
           systems for the pharmaceutical industry. LinkPharm allows pharmacies,
           healthcare facilities, and hospitals to easily place orders with
           wholesalers and distributors, streamlining the ordering process and
           reducing the risk of errors or delays.
         </p>
-        <p class='mt-2'>
+        <p class='mb-2 text-gray-500 dark:text-gray-400'>
           With LinkPharm's digital ordering system, we continue to update our
           database to include all products transacted in Ethiopia so that
           customers can easily search, browse and select from a wide range of
@@ -180,7 +191,7 @@ import {
           to suppliers in realtime allowing the suppliers to respond
           immediately.
         </p>
-        <p class='mt-2'>
+        <p class='mb-2 text-gray-500 dark:text-gray-400'>
           We have designed an intuitive interface to be user-friendly, fast,
           easy to navigate making it simple for non technical users to place
           orders quickly. The system also provides real-time updates on order
@@ -189,7 +200,7 @@ import {
           allow suppliers to competitively bid over products making it easy to
           acquire/sell medical product.
         </p>
-        <p class='mt-2'>
+        <p class='mb-2 text-gray-500 dark:text-gray-400'>
           But we don't stop there - our platform also supports orders from
           wholesalers and distributors to contract manufacturing organizations
           (CMOs). This allows CMOs to receive orders directly from their
@@ -199,10 +210,16 @@ import {
       </div>
     </CardContent>
   </Card>
-  <div class='p-10 flex flex-col justify-center items-center '>
-    <Card className='bg-gradient-to-r from-sky-200 to-gray-300 w-[70%] p-0 flex  group'>
+  <div class='p-10 mb-20 flex flex-col justify-center items-center'>
+    <h5 class='text-3xl font-bold my-5 text-red-500'>Team</h5>
+    <h6 class='text-4xl font-medium mb-16'>Meet Our Team Members</h6>
+    <Card className=' w-[70%] p-0 flex'>
       <CardHeader className='p-0'>
-          <img class="rounded-ss-lg rounded-es-lg " src='/asset/image/jhonny.jpg' alt='Johnny' />
+        <img
+          class='rounded-ss-lg rounded-es-lg'
+          src='/asset/image/jhonny.jpg'
+          alt='Johnny'
+        />
       </CardHeader>
       <CardContent className=''>
         <div class='flex flex-col justify-center items-start h-[30%]'>
@@ -218,37 +235,241 @@ import {
         <div
           class='mt-5 py-10 flex w-full justify-around items-center text-4xl'
         >
-          <a href='#' target='_blank'><i class='fa-brands fa-linkedin'></i></a>
-          <a href='#' target='_self'> <i class='fa-brands fa-facebook'></i></a>
-          <a href='#'>
-            <i class='fa-brands fa-square-x-twitter'></i>
+          <a class='group' href='#' target='_blank'>
+            <i
+              class='fa-brands fa-linkedin-in block group-hover:hidden group-hover:duration-300'
+            ></i>
+            <i
+              class='fa-brands fa-linkedin fa-lg hidden group-hover:block group-hover:duration-300'
+            ></i>
+          </a>
+          <a class='group' href='#' target='_self'>
+            <i
+              class='fa-brands fa-facebook-f block group-hover:hidden transition-all duration-300 ease-in-out'
+            ></i>
+
+            <i
+              class='fa-brands fa-facebook fa-lg hidden group-hover:block transition-all duration-300 ease-in-out'
+            ></i>
+          </a>
+          <a class='group' href='#'>
+            <i
+              class='fa-brands fa-x-twitter block group-hover:hidden transition-all duration-300 ease-in-out'
+            ></i>
+            <i
+              class='fa-brands fa-square-x-twitter fa-lg hidden group-hover:block transition-all duration-300 ease-in-out'
+            ></i>
           </a>
         </div>
       </CardContent>
     </Card>
-    <div class="flex mt-10 flex-row justify-between w-[80%] ">
-      <Card className="w-[45%] p-0 flex flex-row bg-gradient-to-r from-sky-200 to-gray-300">
-        <CardHeader className="p-0 w-[45%]">
-          <img class="rounded-ss-lg rounded-es-lg object-cover h-[100%]" src='/asset/image/tesh-400x458.jpg' alt='teshager' />
+    <div class='flex mt-10 flex-row justify-between w-[80%]'>
+      <Card className='w-[45%] p-0 flex flex-row '>
+        <CardHeader className='p-0 w-[45%]'>
+          <img
+            class='rounded-ss-lg rounded-es-lg object-cover h-[100%]'
+            src='/asset/image/tesh-400x458.jpg'
+            alt='teshager'
+          />
         </CardHeader>
-        <CardContent className="w-[55%] flex justify-center items-center">
+        <CardContent
+          className='w-[55%] flex flex-col justify-center items-center'
+        >
           <div class='flex flex-col justify-center items-start h-[30%]'>
-            <p class='text-2xl font-bold'>Teshager Amare Lemma</p>
+            <p class='text-2xl font-bold'>Teshager Amare</p>
             <p class='text-md font-semibold'>Advisory Board Member</p>
+          </div>
+          <div
+            class='mt-5 pt-5 pb-10 flex w-full justify-around items-center text-4xl'
+          >
+            <a class='group' href='#' target='_blank'>
+              <i
+                class='fa-brands fa-linkedin-in block group-hover:hidden transition-all duration-300 ease-in-out'
+              ></i>
+              <i
+                class='fa-brands fa-linkedin fa-lg hidden group-hover:block transition-all duration-300 ease-in-out'
+              ></i>
+            </a>
+            <a class='group' href='#' target='_self'>
+              <i
+                class='fa-brands fa-facebook-f block group-hover:hidden transition-all duration-300 ease-in-out'
+              ></i>
+
+              <i
+                class='fa-brands fa-facebook fa-lg hidden group-hover:block transition-all duration-300 ease-in-out'
+              ></i>
+            </a>
+            <a class='group' href='#'>
+              <i
+                class='fa-brands fa-x-twitter block group-hover:hidden transition-all duration-300 ease-in-out'
+              ></i>
+              <i
+                class='fa-brands fa-square-x-twitter fa-lg hidden group-hover:block transition-all duration-300 ease-in-out'
+              ></i>
+            </a>
           </div>
         </CardContent>
       </Card>
-      <Card className="w-[45%] p-0 flex flex-row bg-gradient-to-r from-sky-200 to-gray-300">
-        <CardHeader className="p-0 w-[45%]">
-          <img class="rounded-ss-lg rounded-es-lg object-cover h-[100%]" src='/asset/image/Sol.jpg' alt='solomon' />
+      <Card className='w-[45%] p-0 flex flex-row '>
+        <CardHeader className='p-0 w-[45%]'>
+          <img
+            class='rounded-ss-lg rounded-es-lg object-cover h-[100%]'
+            src='/asset/image/Sol.jpg'
+            alt='solomon'
+          />
         </CardHeader>
-        <CardContent className="w-[55%] flex justify-center items-center">
+        <CardContent
+          className='w-[55%] flex flex-col justify-center items-center'
+        >
           <div class='flex flex-col justify-center items-start h-[30%]'>
             <p class='text-2xl font-bold'>Solomon Kassa</p>
             <p class='text-md font-semibold'>Advisory Board Member</p>
+          </div>
+          <div
+            class='mt-5 py-10 flex w-full justify-around items-center text-4xl'
+          >
+            <a class='group' href='#' target='_blank'>
+              <i
+                class='fa-brands fa-linkedin-in block group-hover:hidden transition-all duration-300 ease-in-out'
+              ></i>
+              <i
+                class='fa-brands fa-linkedin fa-lg hidden group-hover:block transition-all duration-300 ease-in-out'
+              ></i>
+            </a>
+            <a class='group' href='#' target='_self'>
+              <i
+                class='fa-brands fa-facebook-f block group-hover:hidden transition-all duration-300 ease-in-out'
+              ></i>
+
+              <i
+                class='fa-brands fa-facebook fa-lg hidden group-hover:block transition-all duration-300 ease-in-out'
+              ></i>
+            </a>
+            <a class='group' href='#'>
+              <i
+                class='fa-brands fa-x-twitter block group-hover:hidden transition-all duration-300 ease-in-out'
+              ></i>
+              <i
+                class='fa-brands fa-square-x-twitter fa-lg hidden group-hover:block transition-all duration-300 ease-in-out'
+              ></i>
+            </a>
           </div>
         </CardContent>
       </Card>
     </div>
   </div>
+  <footer
+    id='footer'
+    class="bg-[url('/asset/image/grad.avif')] bg-cover bg-center relative z-10"
+  >
+    <div class='container'>
+      <div class='pt-16 pb-12'>
+        <div class='flex flex-row justify-start items-start p-10 gap-10'>
+          <div class='w-full md:w-1/2 lg:w-3/12'>
+            <div class='mt-13 mx-3'>
+              <div class='flex flex-col items-start justify-between'>
+                <a href='#'><img src='asset/image/logo.webp' alt='' /></a>
+              </div>
+              <div class='footer_content mt-8'>
+                <p class='text-white'>
+                  The premier B2B marketplace for pharmaceutical products and
+                  medicines in Ethiopia.
+                </p>
+              </div>
+            </div>
+            <!-- footer about -->
+          </div>
+          <div class='w-full md:w-1/2 lg:w-5/12'>
+            <div class='flex flex-wrap mx-3'>
+              <div class='w-1/2 md:pl-13 mt-13'>
+                <h2 class='text-2xl font-semibold text-white'>Contact us</h2>
+                <ul class='text-white pt-4'>
+                  <li>
+                    <i class='fa-solid fa-envelope'></i> : <a
+                      href='mailto:linkpharmeth@gmail.com'
+                      >linkpharmeth@gmail.com</a
+                    >
+                  </li>
+                  <li>
+                    <i class='fa-regular fa-envelope'></i> : <a
+                      href='mailto:linkpharmet@gmail.com'
+                      >linkpharmet@gmail.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- footer link -->
+            </div>
+            <!-- footer link wrapper -->
+          </div>
+          <div class='w-full md:w-2/3 lg:w-4/12'>
+            <div class='mt-13 mx-3'>
+              <h2 class='text-2xl font-semibold text-white'>Newsletter</h2>
+              <div class='mt-9'>
+                <form action='#'>
+                  <input
+                    type='text'
+                    placeholder='Enter email'
+                    class='w-[75%] py-4 px-5 bg-transparent text-white hover:bg-white transition-all duration-300 ease-in-out hover:text-black border'
+                  />
+                  <button
+                    class='mt-4 w-[75%] py-3 px-4 bg-red-400 hover:bg-red-500 text-white border transition-all duration-300 ease-in-out'
+                    >Subscribe</button
+                  >
+                </form>
+              </div>
+            </div>
+            <!-- footer subscribe -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- footer widget -->
+      <div
+        class='footer_copyright pt-3 pb-6 border-t-2 border-solid border-white border-opacity-10 sm:flex justify-between'
+      >
+        <div class='text-xl pt-4 mx-3'>
+          <ul class='flex justify-center sm:justify-start gap-6'>
+            <li class='mr-3'>
+              <a href='https://facebook.com/uideckHQ'
+                ><i class='fa-brands fa-facebook fa-lg'></i></a
+              >
+            </li>
+            <li class='mr-3'>
+              <a href='https://twitter.com/uideckHQ'
+                ><i class='fa-brands fa-square-x-twitter fa-lg'></i></a
+              >
+            </li>
+            <li class='mr-3'>
+              <a href='https://instagram.com/uideckHQ'
+                ><i class='fa-brands fa-square-instagram fa-lg'></i></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class='flex justify-center items-center gap-6'>
+          <a
+            href='/privacy'
+            class='text-gray-300 mt-4 hover:text-white transition-all duration-300 ease-in-out'
+          >
+            Privacy Policy
+          </a>
+          <a
+            href='/terms-and-conditions'
+            class='text-gray-300 mt-4 hover:text-white transition-all duration-300 ease-in-out'
+            >Terms and Conditions</a
+          >
+        </div>
+        <!-- footer social -->
+        <div class='footer_copyright_content pt-4 text-center'>
+          <p class='text-gray-400'>
+            © 2023 Linkpharmet.com All rights reserved
+          </p>
+        </div>
+        <!-- footer copyright content -->
+      </div>
+      <!-- footer copyright -->
+    </div>
+    <!-- container -->
+  </footer>
 </Layout>
